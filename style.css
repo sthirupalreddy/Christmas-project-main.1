@@ -1,0 +1,112 @@
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #001d4a, #00376b);
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    z-index: 10;
+}
+
+.moon {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #ffffff, #d9d9d9);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+.santa {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: santaFloat 4s infinite ease-in-out;
+}
+
+.santa-image {
+    width: 600px;
+}
+
+#snowfall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    opacity: 0.8;
+    user-select: none;
+    animation: fall linear infinite;
+}
+
+.houses {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+    z-index: 14; /* Make sure it stays in front of other elements if necessary */
+}
+
+.houses-image {
+    width: 1000px;  /* You can adjust the width percentage */
+    max-width: 400%;
+    height: 220px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@keyframes santaFloat {
+    0%, 100% {
+        top: 30%;
+    }
+    50% {
+        top: 20%;
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
